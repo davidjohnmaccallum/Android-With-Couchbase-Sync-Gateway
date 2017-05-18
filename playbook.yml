@@ -1,0 +1,56 @@
+---
+# Sets up a Couchbase Sync Gateway.  Uncomment Couchbase Server for production use.
+
+- hosts: "{{ variable_host }}"
+  vars:
+    variable_host: localhost
+    base_dir: /Users/david/Development/Internal/SyncGateway/var
+    should_pull: false
+  remote_user: root
+  
+  tasks:
+
+  # - name: Couchbase data directory.
+  #   file:
+  #     path: "{{base_dir}}/couchbase"
+  #     state: directory
+
+  - name: Sync Gateway config directory.
+    file:
+      path: "{{base_dir}}/sync-gateway"
+      state: directory
+
+  - name: Upload Sync Gateway config.
+    copy:
+      src: ./sync-gateway-config.json
+      dest: "{{base_dir}}/sync-gateway/sync-gateway-config.json"
+
+  # - name: A Couchbase Server. The datastore for Sync Gateway.
+  #   docker_container:
+  #     name: couchbase-server
+  #     image: couchbase/server:4.6.1
+  #     state: started
+  #     pull: "{{ should_pull }}"
+  #     ports:
+  #       - "8091:8091"
+  #       - "8092:8092"
+  #       - "8093:8093"
+  #       - "8094:8094"
+  #       - "11210:11210"
+  #     volumes:
+  #       - "{{base_dir}}/couchbase:/opt/couchbase/var"
+
+  - name: Sync Gateway. Manages data sync with mobile devices.
+    docker_container:
+      name: sample-sync-gateway
+      image: "couchbase/sync-gateway"
+      state: started
+      pull: "{{ should_pull }}"
+      command: "-adminInterface :4985 /tmp/config/sync-gateway-config.json"
+      ports:
+        - "4984:4984"
+        - "4985:4985"
+      links:
+#        - couchbase-server:couchbase-server
+      volumes:
+        - "{{base_dir}}/sync-gateway:/tmp/config"

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CouchBaseAndroid</string>
+    <string name="sync_gateway_url">http://192.168.1.16:4984/db</string>
+</resources>
