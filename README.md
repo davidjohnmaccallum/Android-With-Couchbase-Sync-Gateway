@@ -16,9 +16,8 @@ You can view the Sync Gateway logs as follows:
 david$ docker logs -f sample-sync-gateway
 `
 
-A successful statup log looks like.
+Here is a successful statup log:
 
-`
 2017-05-18T09:18:45.795Z Enabling logging: [*]
 2017-05-18T09:18:45.795Z ==== Couchbase Sync Gateway/1.4.0(2;9e18d3e) ====
 2017-05-18T09:18:45.795Z requestedSoftFDLimit < currentSoftFdLimit (5000 < 1048576) no action needed
@@ -34,7 +33,7 @@ A successful statup log looks like.
 2017-05-18T09:18:45.800Z Cache:     #1 ==> channel "*"
 2017-05-18T09:18:45.800Z Changes+: Notifying that "db" changed (keys="{*}") count=3
 2017-05-18T09:18:45.808Z Starting server on :4984 ...
-`
+
 
 #### Useful Documentation
 
