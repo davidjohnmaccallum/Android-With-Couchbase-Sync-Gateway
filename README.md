@@ -16,7 +16,7 @@ You can view the Sync Gateway logs as follows:
 david$ docker logs -f sample-sync-gateway
 `
 
-Here is what a successful statup log looks like.
+A successful statup log looks like.
 
 `
 2017-05-18T09:18:45.795Z Enabling logging: [*]
@@ -34,10 +34,9 @@ Here is what a successful statup log looks like.
 2017-05-18T09:18:45.800Z Cache:     #1 ==> channel "*"
 2017-05-18T09:18:45.800Z Changes+: Notifying that "db" changed (keys="{*}") count=3
 2017-05-18T09:18:45.808Z Starting server on :4984 ...
-
 `
 
 #### Useful Documentation
 
-* [Sync Gateway Docs|https://developer.couchbase.com/documentation/mobile/1.4/guides/sync-gateway/index.html]
-* [Ansible Docker Module Docs|https://docs.ansible.com/ansible/docker_container_module.html]
+* Sync Gateway Docs https://developer.couchbase.com/documentation/mobile/1.4/guides/sync-gateway/index.html
+* Ansible Docker Module Docs https://docs.ansible.com/ansible/docker_container_module.html
