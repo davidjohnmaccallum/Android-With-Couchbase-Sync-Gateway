@@ -65,7 +65,7 @@ public class Application extends android.app.Application implements Replication.
 
         pullReplication = database.createPullReplication(syncUrl);
         List<String> channels = new ArrayList<>();
-        channels.add("david.maccallum@einsight.co.za");
+        channels.add("david");
         pullReplication.setChannels(channels);
         pullReplication.setContinuous(true);
 
