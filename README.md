@@ -10,6 +10,8 @@ To get started install Docker and Ansible and run:
 
 Once Sync Gateway has started you will be able to access the Public REST interface http://localhost:4984 and the Admin interface http://localhost:4985/_admin/.
 
+To run the sample Android App you will need [Android Studio](https://developer.android.com/studio/index.html). Be sure to update the [sync_gateway_url](https://github.com/e-Insight/SimpleSyncGateway/blob/master/AndroidApp/app/src/main/res/values/strings.xml) to your local IP address.
+
 You can view the Sync Gateway logs as follows:
 
 `
