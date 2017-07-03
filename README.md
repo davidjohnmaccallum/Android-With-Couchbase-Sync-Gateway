@@ -12,6 +12,16 @@ Once Sync Gateway has started you will be able to access the Public REST interfa
 
 To run the sample Android App you will need [Android Studio](https://developer.android.com/studio/index.html). Be sure to update the [sync_gateway_url](https://github.com/e-Insight/SimpleSyncGateway/blob/master/AndroidApp/app/src/main/res/values/strings.xml) to your local IP address.
 
+Post a document through the Sync Gateway as follows:
+
+`
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -d '{ "user":"david", "title":"hello" }' 'http://localhost:4984/db/'
+`
+
+For more help using the API see https://developer.couchbase.com/documentation/mobile/1.4/references/sync-gateway/rest-api/index.html#!/document/post
+
+## Troubleshooting
+
 You can view the Sync Gateway logs as follows:
 
 `
